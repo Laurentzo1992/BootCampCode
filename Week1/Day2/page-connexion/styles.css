@@ -1,0 +1,133 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+	text-decoration: none;
+	font-family: "verdana";
+
+}
+
+.contenair{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: fixed; /* postulat de départ */
+    top: 50%; left: 47%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    height: 70%;
+    
+}
+
+.menu-gauche{
+	background-color: #ececf4;
+}
+
+.menu-droit{
+	background-image: linear-gradient(to right, rgba(57,20,67), rgba(139,43,164));
+}
+
+.input{
+	width: 95%;
+	padding: 20px;
+	margin-top: -5px;
+
+
+}
+ h1{
+ 	text-align: center;
+ 	margin-top: 20px;
+ }
+.input input{
+	width: 100%;
+	padding: 8px;
+	border: 1px solid;
+	margin-top: 8px;
+	background-color: floralwhite;
+	box-shadow: 3px 3px darkviolet, -1em 0 0.4em olive;
+
+}
+.remember{
+	padding: 20px;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: -15px;
+}
+
+h6{
+	margin-left: 25px;
+}
+.submit{
+	padding: 20px;
+	width: 95%;
+	margin-top: -20px;
+}
+.submit input{
+	width: 100%;
+	height: 35px;
+	background-color:  #a05db2;
+	border: none;
+	border-radius: 10px;
+	color: white;
+}
+
+.other-log{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.other-log hr{
+	width: 10%;
+	margin-left: 20px;
+}
+.other-icon{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.other-icon span{
+	margin-left: 20px;
+	background-color: white;
+}
+
+.copyrith{
+	display: flex;
+	flex-direction: column;
+	justify-content: safe flex-end;
+	margin-top: 30px;
+}
+
+.menu-droit{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.menu-droit span:first-child{
+	color: white;
+}
+
+.menu-droit h1{
+	color: white;
+}
+
+.menu-droit p{
+	color: white;
+	text-align: center;
+}
+
+.menu-droit a{
+	display: flex;
+	justify-content: center;
+}
+.menu-droit button{
+	border-radius: 20px;
+	padding: 10px;
+	margin-top: 8px;
+	background-color: #33093e;
+	color: white;
+	border-color: white;
+}
+
