@@ -1,3 +1,80 @@
+/*<!-------------CSS Style
+
+
+------------------->*/
+/*font family seting*/
+@font-face
+{
+    font-family: 'RubikDirt-Regular';
+    src: url('RubikDirt-Regular.ttf');
+}
+/*herder style*/
+header{
+	background-color: #180f50;
+	color: white;
+	font-family: RubikDirt-Regular;
+	font-size: 2.0em;
+}
+header .header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.header img{
+	width: 5%;
+}
+
+/*nav element style*/
+
+ul{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+li{
+	list-style-type: none;
+	margin-right: 25px;
+}
+/*text style*/
+
 .corps{
-	background-image: url('av.jpg');
+	background: url('av.jpg');
+	height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+	flex-direction: column;
+	justify-content: safe flex-end;
+	position: relative;
+}
+
+
+h1{
+	margin-left: 100px;
+	font-family: RubikDirt-Regular;
+	font-size: 3.0em;
+	color: yellowgreen;
+}
+
+p{
+	margin-left: 80px;
+	margin-right: 300px;
+	width: 75%;
+	padding: 15px;
+	color: white;
+	font-size: 1.3em;
+}
+
+/*footer syle*/
+
+.footer {
+
+    background-color: #180f50;
+    color: white;
+    text-align: center;
+    height: 60px;
 }
