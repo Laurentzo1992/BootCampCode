@@ -1,3 +1,58 @@
 header{
-	
+	background-color: #554f55;
+	height: 40px;
+	margin-top: -10px;
+}
+
+nav a{
+	float: right;
+	color: white;
+	margin-right: 20px;
+}
+
+nav span{
+	color: white;
+}
+
+
+main{
+	margin-top: 20px;
+	display: table;
+	clear: both;
+	text-align: center;
+
+}
+
+div{
+	float: left;
+     height: 350px;
+     width: 25%;
+     height: 500px;
+}
+
+
+img{
+	width: 80%;
+}
+
+.footer{
+	text-align: center;
+	height: 65px;
+	width: 100%;
+	background-color: #554f55;
+	margin-bottom: -9px;
+
+}
+
+footer i{
+	display: inline-block;
+	margin-right: 25px;
+	font-size: 50px;
+	padding: 10px;
+
+}
+
+
+footer i:hover{
+	color: white;
 }
