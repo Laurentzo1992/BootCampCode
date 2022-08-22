@@ -1,0 +1,115 @@
+
+body{
+	background-image: url("https://dromen.site/wp-content/uploads/2020/08/i0n3shqtbjq-1-scaled-1000x500.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #147a7e;
+	position: sticky;
+	top: 0;
+	flex: 0;
+	right: 0;
+}
+
+header h4, a{
+	margin-right: 35px;
+}
+header h4{
+	color: white;
+}
+
+button{
+ 	color: white;
+ 	background-color: #1b99e0;
+ 	border: none;
+ 	padding: 5px;
+ }
+
+.contenair{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenair h4{
+	color: white;
+}
+.zone1{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.zone1 div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.zone2{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.zone1 div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.zone2 div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.zone3{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.zone4{
+	display: flex;
+	flex-direction: row;
+	margin-left: -405px;
+}
+
+.zone3 input{
+	width: 288%;
+}
+
+.input{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	background-color: #656666;
+	box-shadow: 12px 12px 12px 12px gray;
+}
+input{
+	padding: 5px;
+	margin: 5px;
+}
+
+a{
+	padding: 45px;
+}
+
+.contenair a button{
+	padding: 10px;
+}
+
+img{
+	width: 3%;
+	float: right;
+	position: static;
+	border-radius: 50%;
+}
