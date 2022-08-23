@@ -1,0 +1,50 @@
+.contenair{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 100%;
+}
+
+.gauche{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.gauche div{
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	border: 1px solid black;
+	margin-bottom: 15px;
+}
+
+.centre div{
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	border: 1px solid black;
+	margin: 25px;
+}
+
+.droite div{
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	border: 1px solid black;
+	margin-bottom: 15px;
+}
+.centre{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.droite{
+	display: flex;
+	flex-direction: column;
+}
+hr{
+	width: 80%;
+}
