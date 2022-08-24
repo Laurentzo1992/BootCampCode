@@ -9,6 +9,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	box-sizing: content-box;
 }
 
 .contenair3{
@@ -21,11 +22,65 @@
 	display: flex;
 	flex-direction: row;
 
+
 }
 
-.row div{
+.contenair1 .row div{
 	width: 50px;
 	height: 50px;
-	border: 1px solid black;
+	border: none;
+	margin: 2px;
 
 }
+.contenair2 .row div{
+	width: 50px;
+	height: 50px;
+	border: none;
+	margin: 2px;
+
+}
+
+.contenair3 .row div{
+	width: 50px;
+	height: 50px;
+	border: none;
+
+}
+
+
+/*couleurs defis 1*/
+.contenair1 > .row > .orange{
+	background-color: #ef930f;
+}
+.contenair1 > .row > .orage-claire{
+	background-color: #f5c969;
+}
+.contenair1 > .row > .chocolat{
+	background-color:  #9b7420;
+}
+/*couleurs defis 2*/
+.contenair2 > .row > .girs1{
+	background-color: #e3dfe0 ;
+}
+.contenair2 > .row > .girs2{
+	background-color: #c0adb2;
+}
+.contenair2 > .row > .girs3{
+	background-color: #766d6f;
+}
+.contenair2 > .row > .girs4{
+	background-color: #171616;
+}
+
+/*couleurs defis 3*/
+.contenair3 > .row > .blanc{
+	background-color: #fff;
+}
+.contenair3 > .row > .rose-claire{
+	background-color: #f7aec0 ;
+}
+
+.contenair3 > .row > .rose-rouge{
+	background-color: #f65963;
+}
+
