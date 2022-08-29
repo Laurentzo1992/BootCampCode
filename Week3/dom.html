@@ -1,30 +1,63 @@
 <!DOCTYPE html>
-<html><head>
-<meta charset=utf-8 />
-<title>Return first and last name from a form - w3resource</title>
-<style type="text/css">
-    body
-     {margin: 30px;}
-    </style> 
-    </head><body>
-    <form id="form1" onsubmit="getFormvalue()">
-    First name: <input type="text" name="fname" value="David"><br>
-    Last name: <input type="text" name="lname" value="Beckham"><br>
-    <input type="submit" value="Submit">
-    </form>
-    </body>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
 
-    <script type="text/javascript">
-      function getFormvalue()
-          {
-            var x=document.getElementById("form1");
-            for (var i=0;i<x.length;i++)
-            {
-             if (x.elements[i].value!='Submit')
-              {  
-                console.log(x.elements[i].value);
-               }  
-             }
-          }
+   <table id="sampleTable" border="1">
+   <thead>
+     <th>Nom</th>
+     <th>Prenom</th>
+     <th>Email</th>
+     <th>Tel</th>
+   </thead> 
+    <tr id="line">
+        <td></td> 
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr> 
+</table>
+
+
+ <form>
+    <input type="text" name="nom">
+    <input type="text" name="prenom">
+    <input type="email" name="email">
+    <input type="tel" name="tel">
+  </form>
+<input type="button" onclick="insertRow()" value="Insert row">  
+
+    <script>
+
+      function insertRow(){
+
+            //ceation de la ligne
+            let newLine = document.createElement('tr'); 
+            //creation de la colone 1
+            let newCololle1 = document.createElement('td');
+            //creation du contenu col 1
+            let newText1 = document.createTextNode('Valeur 3');
+            //creation de la colone  2
+            let newCololle2 = document.createElement('td'); 
+            //creation du contenu col 2
+            let newText2 = document.createTextNode('Valeur 4');
+            //ajout de la ligne sur le tableau
+            document.getElementById('sampleTable').appendChild(newLine);
+            //ajout de la conne 1
+            newLine.appendChild(newCololle1);
+            //ajout contenu 1
+            newCololle1.appendChild(newText1);
+            //ajout colone 2
+            newLine.appendChild(newCololle2);
+            //ajout contenu 2
+            newCololle2.appendChild(newText2);
+
+      }
+      
     </script>
+</body>
 </html>

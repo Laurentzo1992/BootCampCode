@@ -53,3 +53,10 @@
 
     //prediction false car l'instruction compare si true valeur bool = 1 est deferente de true valeur bool = 1 en valeur et en type
     //réel false
+
+
+
+    //Exercice 2 
+
+    let chiffres = "1,2,4,8,9";
+    console.log(chiffres[0]+chiffres[1]+chiffres[2]+chiffres[3]+chiffres[4])

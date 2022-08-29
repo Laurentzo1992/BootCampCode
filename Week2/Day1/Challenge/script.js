@@ -7,10 +7,8 @@ fruits.splice(0,1);
 fruits.sort()
 //Ajouter Kiwi
 fruits.push("Kiwi")
-
 //Suprimer Aplles avec une methode differente de la premiere
-
-
+fruits.shift()
 //Trier par ordre inverse
 fruits.reverse()
 
