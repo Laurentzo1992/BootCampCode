@@ -33,3 +33,19 @@ if (nombre%2===0){
 else {
     (" x est un nombre impair");
 }
+
+//Exercice 4
+
+let users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
+if(users.length==0){
+    console.log("personne n'est en ligne");
+}
+else if (users.length==1){
+    console.log(users[0], "est en ligne");
+}
+else if(users.length==2){
+    console.log(users[0], "et", users[1], "sont en ligne");
+}
+else{
+    console.log(users[0], users[1], "et", users.length-2, "de plus sont en ligne");
+}
