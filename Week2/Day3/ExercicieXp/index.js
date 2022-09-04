@@ -22,6 +22,15 @@ people[0].pop()
 let last = people.at(-1);
 
 
+// Exercice 3
+
+let numberForUser = Number(prompt("Give one number : "));
+while(numberForUser <10 ){
+    let numberForUser = Number(prompt("Give one number : "));
+     alert(typeof(numberForUser));
+}
+
+
 
 
 
