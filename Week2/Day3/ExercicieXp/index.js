@@ -32,6 +32,37 @@ while(numberForUser <10 ){
 
 
 
+//Exercice 4
+
+
+let building = {
+    numberOfFloors : 4,
+    numberOfAptByFloor : {
+        firstFloor : 3,
+        secondFloor : 4,
+        thirdFloor : 9,
+        fourthFloor : 2,
+    },
+    nameOfTenants : ["Sarah", "Dan", "David"],
+    numberOfRoomsAndRent:  {
+        sarah: [3, 990],
+        dan :  [4, 1000],
+        david : [1, 500],
+    },
+}
+
+//Console.log le nombre d'étages du bâtiment.
+console.log(building.numberOfFloors);
+
+//Console.log combien d'appartements sont aux étages 1 et 3.
+console.log(building.numberOfAptByFloor.firstFloor +" et "+ building.numberOfAptByFloor.thirdFloor);
+
+//Console.log le nom du deuxième locataire et le nombre de pièces qu'il possède dans son appartement.
+console.log(building.nameOfTenants[1]);
+
+//Vérifiez si la somme du loyer de Sarah et de David est supérieure au loyer de Dan. Si c'est le cas, augmentez le loyer de Dan à 1200.
+
+
 
 
 
