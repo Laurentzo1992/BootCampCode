@@ -10,7 +10,9 @@ main{
   justify-content: center;
   align-items: center;
 }
-
+.header{
+  width: 30%;
+}
 .list{
   display: flex;
   flex-direction: column;
