@@ -151,20 +151,28 @@ print(f" Liste finale {Liste}")
 
 
 #Exercice 10
+# Utilisez la liste ci-dessus appelée sandwich_orders.
+# Créez une liste vide appelée finished_sandwiches.
+# Au fur et à mesure que chaque sandwich est préparé, déplacez-le vers la liste des sandwichs finis.
+# Une fois que tous les sandwichs ont été préparés, imprimez un message répertoriant chaque sandwich qui a été préparé , tel que I made your tuna sandwich.
 
 sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
 finished_sandwiches = []
-for sandwich in sandwich_orders:
-    Entr = int(input("Dites si le sandwich est pret en tapant 1 :"))
-    if Entr == 1:
-        finished_sandwiches.append(sandwich)
-        sandwich_orders.remove(sandwich)
-        print(f"{sandwich} est près ")
-        if len(sandwich_orders)==0:
-            print("Tous les sandwich sont près :")
-print(f"Votre menu tout près : {finished_sandwiches}")
+while sandwich_orders != []:
+    for sandwich in sandwich_orders:
+        Entr = int(input(f"Dites si le sandwich {sandwich }est pret en tapant 1 :"))
+        if Entr == 1:
+            finished_sandwiches.append(sandwich)
+            sandwich_orders.remove(sandwich)
+            print(f"{sandwich} est près ")
+    print(f"Votre menu tout près : {finished_sandwiches}")
+    print(f"Il reste {sandwich_orders} non cuit ")
 
 
 #Exercice 11
 
+
+# En utilisant la liste sandwich_ordersde l'exercice précédent, assurez-vous que le sandwich 'pastrami' apparaît dans la liste au moins trois fois.
+# Ajoutez du code au début de votre programme pour imprimer un message indiquant que la charcuterie n'a plus de pastrami, puis utilisez une whileboucle pour supprimer toutes les occurrences de 'pastrami' de sandwich_orders.
+# Assurez-vous qu'aucun sandwich au pastrami ne se retrouve dans finished_sandwiches.
 
