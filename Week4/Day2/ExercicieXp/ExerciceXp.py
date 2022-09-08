@@ -81,6 +81,7 @@ else:
     print("You chose a new fruit. I hope you enjoy")
 
 #Exercice 8
+
 #Écrivez une boucle qui demande à un utilisateur d'entrer une série de garnitures de pizza, lorsque l'utilisateur saisit "quitter", arrêtez de demander des garnitures.
 #Au fur et à mesure qu'ils entrent dans chaque garniture, imprimez un message indiquant que vous ajouterez cette garniture à leur pizza.
 #À la sortie de la boucle, imprimez toutes les garnitures sur la pizza et quel est le prix total (10 + 2,5 pour chaque garniture).
@@ -96,3 +97,74 @@ while True:
         break
     somme = len(pizza)*(12.5)
 print(f" votre pizza est commosé de {pizza} au Prix total de : {somme}$")
+
+
+#Exercice 9
+
+#Une salle de cinéma facture des prix de billets différents en fonction de l'âge d'une personne.
+# si une personne a moins de 3 ans, le billet est gratuit.
+# s'ils sont entre 3 et 12, le billet est de 10 $.
+# s'ils ont plus de 12 ans, le billet est de 15 $.
+# Demandez à une famille l'âge de chaque personne qui veut un billet.
+# Enregistrez le coût total de tous les billets de la famille et imprimez-le.
+
+nombrepersonneAge10 = 0
+nombrepersonneAge12 = 0
+prixTotal = 0
+while True:
+    age = int(input("Veillez indiquer votre age svp taper -1 pour sortir : "))
+    if age == -1:
+        break
+    else:
+        if age > 0 and age < 3:
+            print("Le ticket est gratuit")
+        elif age >= 3 and age <= 12:
+            print("prix du ticket 10$")
+            nombrepersonneAge10 = +1
+        else:
+            print("Prix du ticket 15$")
+            nombrepersonneAge12 = +1
+        prixTotal = (nombrepersonneAge10 * 10) + (nombrepersonneAge12 * 12)
+    if age ==-1:
+        break
+print(f"Prix total est {prixTotal}")
+
+# Un groupe d'adolescents vient dans votre salle de cinéma et souhaite regarder un film réservé aux personnes âgées de 16 à 21 ans.
+# Compte tenu d'une liste de noms, écrivez un programme qui demande à l'adolescent son âge, s'il n'est pas autorisé pour regarder le film, supprimez-les de la liste.
+# À la fin, imprimez la liste finale.
+
+Liste = []
+while True:
+    Entr = input("Entrer le nom dans la liste ou tapez quit pour quitter: ")
+    Liste.append(Entr)
+    print(f"Liste initaile {Liste} ")
+    if Entr == "quit":
+        break
+    else:
+        for nom in Liste:
+            elementAge = input("Age svp : ")
+            if elementAge <= 16 and elementAge >= 21:
+                print("Autoriser")
+            else:
+                Liste.remove(nom)
+print(f" Liste finale {Liste}")
+
+
+#Exercice 10
+
+sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
+finished_sandwiches = []
+for sandwich in sandwich_orders:
+    Entr = int(input("Dites si le sandwich est pret en tapant 1 :"))
+    if Entr == 1:
+        finished_sandwiches.append(sandwich)
+        sandwich_orders.remove(sandwich)
+        print(f"{sandwich} est près ")
+        if len(sandwich_orders)==0:
+            print("Tous les sandwich sont près :")
+print(f"Votre menu tout près : {finished_sandwiches}")
+
+
+#Exercice 11
+
+
