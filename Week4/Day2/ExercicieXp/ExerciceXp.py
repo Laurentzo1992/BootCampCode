@@ -176,3 +176,17 @@ while sandwich_orders != []:
 # Ajoutez du code au début de votre programme pour imprimer un message indiquant que la charcuterie n'a plus de pastrami, puis utilisez une whileboucle pour supprimer toutes les occurrences de 'pastrami' de sandwich_orders.
 # Assurez-vous qu'aucun sandwich au pastrami ne se retrouve dans finished_sandwiches.
 
+sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Pastrami sandwich", "Pastrami sandwich", "Pastrami sandwich"]
+finished_sandwiches = []
+print("Il y a plus Pastrami sandwich")
+while sandwich_orders:
+    if "Pastrami sandwich" in sandwich_orders:
+        sandwich_orders.remove("Pastrami sandwich")
+    else:
+        break
+print(f"Liste sans Pastrami {sandwich_orders}")
+
+for sandwich in sandwich_orders:
+    finished_sandwiches.append(sandwich)
+    sandwich_orders.remove(sandwich)
+print(f"Liste final {finished_sandwiches}")
