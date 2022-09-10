@@ -1,7 +1,8 @@
 
 #À l'aide de la inputfonction, demandez à l'utilisateur une chaîne. La chaîne doit comporter 10 caractères.
-
 Caracteres = input("Saisir un text : ")
+Caracteres = Caracteres.replace(" ", "")
+print(Caracteres)
 taille = len(Caracteres)
 if taille<10:
     print(f"Chaine pas assez longue {taille} caractere") #S'il contient moins de 10 caractères, imprimez un message indiquant "chaîne pas assez longue".
