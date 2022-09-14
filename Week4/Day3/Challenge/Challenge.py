@@ -20,7 +20,7 @@ print(mot)
 # Triez la liste par ordre alphabétique.
 # Renvoyez "Rien" si vous ne pouvez rien acheter du magasin.
 
-wallet = 14
+wallet = 2000
 items_purchase = {
   "Water": 1,
   "Bread": 3,
@@ -33,5 +33,5 @@ items_purchase = {
   "Pan": 100,
   "Spoon": 2
 }
-articlePayables = [article for article in items_purchase if items_purchase[article] == wallet]
+articlePayables = [article for article in items_purchase if items_purchase[article] <= wallet]
 print(articlePayables)
