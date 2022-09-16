@@ -117,27 +117,43 @@ from random import randint
 
 #Créez une fonction appelée get_random_temp()
 
-def get_random_temp():
-    tmpvalue = random.randint(-10, 40)
+def get_random_temp(saison):
+    if saison == "hiver":
+        tmpvalue = random.randint(0, 16)
+    elif saison == "automne":
+        tmpvalue = random.randint(16, 23)
+
+    elif saison == "printemps":
+        tmpvalue = random.randint(24, 32)
+
+    elif saison == "ete":
+        tmpvalue = random.randint(32, 40)
+    else:
+        tmpvalue = random.randint(-10, 0)
     return tmpvalue
 
 # Creér une fonction main
 def main():
+
+    saison = input("Veiller saisir votre saison actuelle : ")
+    if saison == saison:
 # Appelze la fonction get_random_temp() et satocker la valeur dans une variable
 
-    randtmp = get_random_temp()
-    print(f"la temperature actuelle est de {randtmp} dégré celsus")
-    if randtmp < 0:
-        print("Brrr, c'est glacial ! Portez des couches supplémentaires aujourd'hui")
-    elif randtmp >0 and randtmp < 16:
-        print("Assez froid ! N'oubliez pas votre manteau")
-    elif randtmp >=16 and randtmp <= 23:
-        print("Un peut frais cas même mais beau temps")
-    elif randtmp >=24 and randtmp < 32:
-        print("Tres beau temps")
-    elif randtmp >=32 and randtmp < 40:
-        print("Quel challeur ! il fau la clim!!!")
+        randtmp = get_random_temp(saison)
+        print(f"la temperature actuelle est de {randtmp} dégré celsus nous en {saison}")
+        if randtmp < 0:
+            print("Brrr, c'est glacial ! Portez des couches supplémentaires aujourd'hui")
+        elif randtmp >0 and randtmp < 16:
+            print("Assez froid ! N'oubliez pas votre manteau")
+        elif randtmp >=16 and randtmp <= 23:
+            print("Un peut frais cas même mais beau temps")
+        elif randtmp >=24 and randtmp < 32:
+            print("Tres beau temps")
+        elif randtmp >=32 and randtmp < 40:
+            print("Quel challeur ! il fau la clim!!!")
+        else:
+            print("Mauvais temps trop de chaleur")
     else:
-        print("Mauvais temps trop de chaleur")
+        print("aucune saison")
 main()
 
