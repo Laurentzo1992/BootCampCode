@@ -1,5 +1,5 @@
 
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,7 +45,9 @@ ROOT_URLCONF = "animal.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR.joinpath('templates'),
+            BASE_DIR.joinpath('static'),
+            ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

@@ -3,7 +3,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, request, response
 
 
-data = {
+
+
+
+def family(request):
+    datas = {
     "animals": [
         {
             "id" :1,
@@ -41,18 +45,110 @@ data = {
         {
             "id": 2,
             "name": "Caninae"
+        },
+        {
+            "id": 3,
+            "name": "mammifère"
+        },
+        {
+            "id": 4,
+            "name": "reptile"
+        },
+        {
+            "id": 5,
+            "name": "insecte"
+        },
+        {
+            "id": 6,
+            "name": "arachnide"
+        },
+        {
+            "id": 7,
+            "name": "amphibie"
+        },
+        {
+            "id": 8,
+            "name": "vvipar"
+        },
+        {
+            "id": 9,
+            "name": "ovipar"
         }
     ]
     }
+    return render(request, "info/family.html", datas)
 
-
-def family(request, id):
-    context = {data:'data'}
-    return render(request, 'family.html', context)
-
-def animal(request, id):
-    context = {data:'data'}
-    return render(request, 'animal.html', context)
+def animal(request):
+    datas = {
+    "animals": [
+        {
+            "id" :1,
+            "name": "Dog",
+            "legs": 4,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 2
+        },
+        {
+            "id": 2,
+            "name": "Domestic Cat",
+            "legs": 2,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 1
+        },
+        {
+            "id": 3,
+            "name": "Panther",
+            "legs": 2,
+            "weight": 5.67,
+            "height":4.2,
+            "speed": 34,
+            "family": 1 
+        }
+    ],
+    "families": [
+        {
+            "id": 1,
+            "name": "Felidae"
+        },
+        {
+            "id": 2,
+            "name": "Caninae"
+        },
+        {
+            "id": 3,
+            "name": "mammifère"
+        },
+        {
+            "id": 4,
+            "name": "reptile"
+        },
+        {
+            "id": 5,
+            "name": "insecte"
+        },
+        {
+            "id": 6,
+            "name": "arachnide"
+        },
+        {
+            "id": 7,
+            "name": "amphibie"
+        },
+        {
+            "id": 8,
+            "name": "vvipar"
+        },
+        {
+            "id": 9,
+            "name": "ovipar"
+        }
+    ]
+    }
+    return render(request, "info/animal.html", datas)
     
     
     
