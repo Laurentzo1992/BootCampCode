@@ -1,0 +1,289 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon-->
+        <link rel="shortcut icon" href={% static "img/favicon.ico"%}>
+        <!-- logo-->
+        <link rel="shortcut icon" href={% static "img/logo.ico"%}>
+        <!-- bootstrap css-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- fontAwesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- CSS Static file-->
+        <link rel="stylesheet" href={% static "css/style.css"%}>
+        <!-- CSS Datatables JS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.css"/>
+         <title>Document</title>
+    </head>
+<body>
+        <div class="wrapper">
+            <!-- ===========header========== -->
+            <header>
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <!-- ==== FontAwesome + title ===== -->
+                        <div class="col-sm">
+                            <a class="navbar-brand flex-grow-1" style="text-align: center; color: #fff; margin-left: 25px;">
+                            <!-- === FontAwesome + icon === -->
+                                {% block navbar-content %}{% endblock navbar-content %}
+                            </a>
+                        </div>
+                        {% block nav-btn %}
+                        <!-- Input search Outside -->
+                        <div class="d-flex" style="margin-right: 25px;">
+                            <div class="input-group input-group-sm">
+                                <a class="btn btn-success btn-sm" style="width: 20%;" title="Add Citoyen" data-bs-toggle="modal" data-bs-target="#addModal"> 
+                                    <i class="fas fa-plus"></i>
+                               
+                                </a>
+                                <input class="form-control" type="search" id="search" placeholder="Live search..." aria-label="search">
+                                <a href="{% url 'home' %}" class="btn btn-secondary btn-sm" title="Refresh" style="width: 40px;">
+                                    <li class="fas fa-sync-alt"></li>
+                                </a>
+                                <a href="/logout" class="btn btn-danger btn-sm" style="margin-left: 25px; border-radius: 50%;" title="Logout" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                    <i class="fas fa-power-off"></i>
+                                </a>
+                            </div>
+                        </div>
+                        {% endblock nav-btn %}
+                    </nav>
+            </header>
+
+            <!-- === block content ROOT === -->
+            {% block content %}{% endblock content %}
+
+            <!-- === nclude === -->
+
+                {% include 'add.html' %}
+                {% include 'modals/logout.html' %}
+                
+
+
+        </div><!-- END wrapper-->
+
+        <footer class="bg-dark text-center text-lg-start" id="footer" style="color: #fff;">
+            <div class="text-center p-3" style="bacground-color: rgba(0,0,0,0.2);"> <i class="fa fa-copyright"> {% now "Y"%} copyright</i>  
+                <a class="text-light" href="#" style="text-decoration: none;">
+                    <span style="color: greenyellow;">
+                        www.ecivil.com
+                    </span>
+                </a>
+            </div>
+        </footer>
+
+    {% for message in messages %}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        {% if message.tags == 'error' %}
+        <script>
+            var m = "{{ message }}";
+            swal("Denied !", "Enter your data correctly.", "error")
+        </script>
+        {% elif message.tags == 'success' %}
+        <script>
+            var m = "{{ message }}";
+            swal("Perfect !", m, "success")
+        </script>
+        {% endif %}
+    {% endfor%}
+
+        <!-- bootstrap5 js-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+         <!-- jquery-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- Datatables JS -->
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.js"></script>
+
+         <!-- Datatables script -->
+         <!-- htmx script cdn -->
+         <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
+
+    <script>
+        $(Document).ready(function(){
+            $('#exemple thead tr')
+                .clone(true)
+                .addClass('filters')
+                .appendTo('#exemple thead');
+
+            var table = $('#exemple').DataTable({
+                
+                //JSON Data
+                {% comment %} "ajax": "/json",
+                "columns": [
+                    {"data": "num"},
+                    {"data": "nom"},
+                    {"data": "prenom"},
+                    {"data": "date_naissance"},
+                    {"data": "lieu_naissance"},
+                    {"data": "situation_matrimoniale"},
+                    {"data": "genre"},
+                    {"data": "created_at"},
+                    ], {% endcomment %}
+
+                //Datatable configurations
+                paging: true, //Pagination
+                pageLength: 10, // Data per page
+                lengthChange: true, //Show entries per page
+                autoWidth: false, // Controle the auto width on columns
+                searching: true, //Input search
+                bInfo: true, //info on footer
+                bSort: true, // Filter A to Z and Z to A (and number)
+                order: [], // Disable order by of datatables
+                orderCellsTop: true, //Put the filter A to Z and Z to A on top (first Thead)
+                scrollX: true, // Enable the scroll horizontal
+                fixedHeader: true, // Force Thead fixed 
+                // Disable column width specific filter A to Z, Z to A
+                "columnsDefs": [{
+                    "targets":[9, 10],
+                    "orderable": false
+                }],
+            initComplete: function() {
+                var api = this.api();
+                // Set the comomns you need to filtering
+                api
+                    .columns([0,1,2,3,4,5,6,7])
+                    .eq(0)
+                    .each(function(colIdx) {
+                        var cell = $('.filters th').eq(
+                            $(api.column(colIdx).header()).index()
+                            );
+                            var title = $(cell).text();
+                            $(cell).html('<input type="text" placeholder="' + title + '"/>');
+
+                            $(
+                                'input',
+                                $('.filters th').eq($(api.column(colIdx).header()).index())
+                            )
+                            .off('keyip change')
+                            .on('keyup change', function(e){
+                                e.stopPropagation();
+                                $(this).attr('title', $(this).val());
+                                var regex = '({search})';
+
+                                var cursorPosition = this.selectionStart;
+
+                                api
+                                    .column(colIdx)
+                                    .search(
+                                        this.value != ''
+                                            ? regex.replace('{search}', '(((' + this.value + ')))')
+                                            : '',
+                                        this.value != '',
+                                        this.value !== ''
+                                    
+                                    )
+                                .draw();
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                            });
+                        });
+                    },
+
+                // BUTTON
+                dom: 'lBfrtip',
+                    buttons: [
+                    { //Copy
+                    extend :'copy',
+                    text: '<i class="fas fa-clone"></i>',
+                    className: 'btn btn-secondary',
+                    titleAttr: 'Copy',
+                    //Choose the colomns you need to copy
+                    exportOptions: {
+                        colomns: [0,1,2,3,5]
+                        },
+                    },
+
+                    { //Excel
+                    extend :'excel',
+                    text: '<i class="fa fa-file-excel"></i>',
+                    className: 'btn btn-secondary',
+                    titleAttr: 'Excel',
+                    //Choose the colomns to export Excel
+                    exportOptions: {
+                        colomns: [0,1,2,3,4,5]
+                            },
+                        },
+
+                    { //Print
+                    extend :'print',
+                    text: '<i class="fas fa-print"></i>',
+                    className: 'btn btn-secondary',
+                    titleAttr: 'Print',
+                    //Choose the colomns to export Excel
+                    exportOptions: {
+                        colomns: [0,1,2,3,5]
+                        },
+                    // font size (when export to print)
+                    customize: function(win) {
+                        $(win.document.body).css('font-size', '10pt')
+                        $(win.document.body).find('table')
+                            .addClass('compact')
+                            .css('font-size', 'inherit');
+                            }
+                    },
+                    
+                    { //Pdf
+                    extend :'pdf',
+                    text: '<i class="fas fa-file-pdf"></i>',
+                    className: 'btn btn-secondary',
+                    titleAttr: 'Pdf',
+                    //Choose the colomns to export Excel
+                    exportOptions: {
+                        colomns: [0,1,2,3,5]
+                        },
+
+                        //Table center
+                    tableHeader: {
+                        alignment: 'center'
+                    },
+                    // Font size and optimization
+                    customize: function(doc){
+                        doc.styles.tableHeader.alignment = 'center'; //Hearder position
+                        doc.styles.tableBodyOdd.alignment = 'center'; //Body position 1 (grey color)
+                        doc.styles.tableBodyEven.alignment = 'center'; //Body position 1 (white color)
+                        doc.styles.tableHeader.fontSize = 7; // Hearder font size
+                        doc.defaultStyle.fontSize = 6; // Body font size
+                        // To get 100% width of the table
+                        doc.content[1].table.widths = Array(doc.content[1].table.body[1].length + 1).join('*').split('');
+                    }
+                    
+                },
+            ]
+            });
+            //Enable search Outside
+            var newSearch = $("#exemple").DataTable();
+            $('#search').keyup(function(){
+                newSearch.search($(this).val()).draw();
+            })
+        });
+    </script>
+    <!-- Function to pulse the text (login page) -->
+    <script>
+        (function pulse(){
+            $('.text-pulse').fadeOut(1000).fadeIn(1000, pulse);
+
+        })();
+    </script>
+    <!-- Script to hide / show the password -->
+    <script> 
+        function myFunction() {
+            var p = document.getElementById("password");
+            if (p.type === "password"){
+                p.type = "text"
+            }
+            else {
+                p.type = "password"
+            }
+        }
+     </script>
+</body>
+</html>
+

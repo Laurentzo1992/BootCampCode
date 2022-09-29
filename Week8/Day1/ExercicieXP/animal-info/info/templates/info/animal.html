@@ -10,10 +10,12 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-       
+        <a href="{% url 'family' %}"> Liste des animaux
+        </a>
+        <h1>Liste d'animaux</h1>
         <ul>
-            {% for data in datas %}
-                <li>{{ data.animals }}</li>
+            {% for data in datas.value %}
+                <li>{{ data }}</li>
             {% endfor %}
             </ul>
     </body>

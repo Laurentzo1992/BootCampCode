@@ -7,6 +7,7 @@ from django.http import HttpResponse, request, response
 
 
 def family(request):
+    
     datas = {
     "animals": [
         {
@@ -76,7 +77,7 @@ def family(request):
         }
     ]
     }
-    return render(request, "info/family.html", datas)
+    return render(request, "info/family.html", {"datas":datas})
 
 def animal(request):
     datas = {
@@ -148,7 +149,7 @@ def animal(request):
         }
     ]
     }
-    return render(request, "info/animal.html", datas)
+    return render(request, "info/animal.html", {"datas":datas})
     
     
     

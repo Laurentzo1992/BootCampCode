@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon-->
+        <link rel="shortcut icon" href={% static "/images/favicon.ico" %}>
+        <!-- logo-->
+        <link rel="shortcut icon" href={% static "/images/logo.ico" %}>
+        <!-- bootstrap css-->
+        <!-- fontAwesome--> 
+          <!-- CSS Static file--> 
+        <link rel="stylesheet" href={% static "css/styles.css"%}>
+        <!-- CSS Datatables -->
+        <title>CLM</title> 
+    </head>
+<body>
+       
+
+            {% block content %}{% endblock content %}
+
+          
+                
+        </div><!-- END wrapper-->
+
+
+        
+       
+
+</body>
+</html>
+
+

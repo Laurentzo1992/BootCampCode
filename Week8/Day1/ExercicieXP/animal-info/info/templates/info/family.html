@@ -9,11 +9,19 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-       
-        <ul>
-            {% for data in datas %}
-                <li>{{ data.families }}</li>
-            {% endfor %}
-            </ul>
+        <a href="{% url 'animal' %}"> Liste des animaux
+        </a>
+     
+       <h1>Liste des famille d'animaux</h1>
+       {% for key, values in datas.items %}
+       <ul>
+                <li>{{key}}</li>
+                {% for v in values %}
+                <li>{{v}}</li>
+                {% endfor %}
+              
+                {% endfor %}
+        </ul>
+            
     </body>
 </html>
