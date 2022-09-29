@@ -63,6 +63,6 @@ def people_one(request, id=id):
 	]
     
     people_one_list = filter(people, key = lambda d: d['id'])
-    return render(request, "people/peopl.html", {"people":people_one_list})
+    return render(request, "people/peopl.html", {"people":people})
 
 # Create your views here.
