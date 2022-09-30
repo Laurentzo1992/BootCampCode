@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>personne</title>
+</head>
+<body>
+<table border="1">
+	<tr bgcolor="grey">
+		<th>id</th>
+		<th>nom</th>
+		<th>email</th>
+		<th>Telephone</th>
+		<th>adresses</th>
+	</tr>
+	{% for personne in personnes %}
+	<tr>
+		<td>{{personne.id}}</td>
+		<td><a href="{% url 'personne_nom' personne.nom %}">{{personne.nom}}</a></td>
+		<td>{{personne.email}}</td>
+		<td><a href="{% url 'personne_telephone' personne.phone %}">{{personne.phone}}</a></td>
+		<td>{{personne.address}}</td>
+		
+	</tr>
+	{% endfor %}
+
+</table>
+</body>
+</html>
