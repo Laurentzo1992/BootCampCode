@@ -1,4 +1,4 @@
-CREATE DATABASE public
+CREATE DATABASE bootcamp 
     WITH 
     OWNER = postgres
     ENCODING = 'UTF8'
