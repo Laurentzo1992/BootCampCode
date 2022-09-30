@@ -13,6 +13,10 @@ class Animal(models.Model):
 	def __str__(self):
 		return self.nom
 
+ 	# def get_id(self,id):
+ 	# 	id = Animal.objects.get(famille)
+ 	# 	return self.id
+
 
 #model Famille
 class Famille(models.Model):
