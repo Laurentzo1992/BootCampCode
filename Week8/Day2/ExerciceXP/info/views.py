@@ -7,8 +7,7 @@ def animaux(request):
 
 
 def family(request, id):
-	id = Animal.objects.get(id)
-	animal = Animal.objects.get(id=id)
+	animals = Animal.objects.get(id=id)
 	return render(request, "info/family.html", {"animals":animals})
 
 
