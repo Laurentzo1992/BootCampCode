@@ -6,6 +6,29 @@
 	<title>Family</title>
 </head>
 <body>
+ <h1>Lites des animaux de la famille {{animal.famille}}</h1>
 
+ <table>
+ 	<tr>
+ 		<th>id</th>
+ 		<th>Nom</th>
+ 		<th>Pattes</th>
+ 		<th>Poids(Kg)</th>
+ 		<th>Taille(m)</th>
+ 		<th>Vitesse(Km/h)</th>
+ 	</tr>
+
+ 	{% for animal in animaux %}
+ 	<tr>
+ 		<td>{{animal.id}}</td>
+ 		<td>{{animal.nom}}</td>
+ 		<td>{{animal.pattes}}</td>
+ 		<td>{{animal.poids}}</td>
+ 		<td>{{animal.taille}}</td>
+ 		<td>{{animal.vitesse}}</td>
+ 		
+ 	</tr>
+ 	{% endfor %}
+ </table>
 </body>
 </html>

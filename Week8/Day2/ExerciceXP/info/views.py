@@ -2,13 +2,17 @@ from django.shortcuts import render
 from info.models import Animal, Famille 
 
 def animaux(request):
-	return render(request, "info/animaux.html", {})
+	animaux = Animal.objects.all()
+	return render(request, "info/animaux.html", {"animaux":animaux})
 
 
-def family(request):
-	return render(request, "info/family.html", {})
+def family(request, id):
+	id = Animal.objects.get(id)
+	animal = Animal.objects.get(id=id)
+	return render(request, "info/family.html", {"animals":animals})
 
 
-def animal(request):
-	return render(request, "info/animal.html", {})
+def animal(request, id):
+	animal = Animal.objects.get(id=id)
+	return render(request, "info/animal.html", {"animal":animal})
 # Create your views here.

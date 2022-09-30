@@ -6,6 +6,35 @@
 	<title>Animaux</title>
 </head>
 <body>
+ <h1>Lites des animaux</h1>
+ {% if animaux %}
+ <table>
+ 	<tr>
+ 		<th>id</th>
+ 		<th>Nom</th>
+ 		<th>Pattes</th>
+ 		<th>Poids(Kg)</th>
+ 		<th>Taille(m)</th>
+ 		<th>Vitesse(Km/h)</th>
+ 		<th>Famille</th>
+ 	</tr>
+	
+ 	
 
+ 	{% for animal in animaux %}
+ 	<tr>
+ 		<td>{{animal.id}}</td>
+ 		<td><a href="{% url 'animal' animal.id %}">{{animal.nom}}</a></td>
+ 		<td>{{animal.pattes}}</td>
+ 		<td>{{animal.poids}}</td>
+ 		<td>{{animal.taille}}</td>
+ 		<td>{{animal.vitesse}}</td>
+ 		<td><a href="{% url 'family' animal.id %}">{{animal.famille}}</a></td>
+ 	</tr>
+ 	{% endfor %}
+ </table>
+ {% else %}
+ 	<h4>pas de données</h4>
+ {% endif %}
 </body>
 </html>

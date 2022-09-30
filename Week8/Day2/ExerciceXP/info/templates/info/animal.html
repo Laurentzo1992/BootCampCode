@@ -6,6 +6,16 @@
 	<title>Animal</title>
 </head>
 <body>
+<ul>
+    <li>ID : {{animal.id}}</li>
+    <li>Nom : {{animal.nom}}</li>
+    <li>Pattes: {{animal.pattes}}</li>
+    <li>Poids(Kg) : {{animal.poids}}</li>
+    <li>Taille(m) : {{animal.taille}}</li>
+    <li>Vitesse(Km/h) : {{animal.vitesse}}</li>
+    <li>Famille : {{animal.famille}}</li>
+</ul>
 
+<a href="{% url 'animaux' %}"> Retour</a>
 </body>
 </html>
