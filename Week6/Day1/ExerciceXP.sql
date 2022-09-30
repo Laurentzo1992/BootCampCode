@@ -7,13 +7,13 @@ CREATE DATABASE bootcamp
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 
-CREATE TABLE items(
+CREATE TABLE public."items"(
  item_id SERIAL PRIMARY KEY,
  item_name VARCHAR (50) NOT NULL
  item_price F (50) NOT NULL
 );
 
-CREATE TABLE customers(
+CREATE TABLE public."customers"(
  customer_id SERIAL PRIMARY KEY,
  customer_fname VARCHAR (50) NOT NULL,
  customer_name VARCHAR (100) NOT NULL
