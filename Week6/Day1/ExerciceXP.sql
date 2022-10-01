@@ -1,16 +1,9 @@
-CREATE DATABASE bootcamp 
-    WITH 
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    LC_COLLATE = 'French_Burkina Faso.1252'
-    LC_CTYPE = 'French_Burkina Faso.1252'
-    TABLESPACE = pg_default
-    CONNECTION LIMIT = -1;
+
 
 CREATE TABLE public."items"(
  item_id SERIAL PRIMARY KEY,
  item_name VARCHAR (50) NOT NULL
- item_price F (50) NOT NULL
+ item_price REAL (10) NOT NULL
 );
 
 CREATE TABLE public."customers"(
