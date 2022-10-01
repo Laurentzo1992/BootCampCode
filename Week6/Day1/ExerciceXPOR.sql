@@ -1,5 +1,5 @@
 -- Va chercher les quatre premiers élèves. Vous devez classer les quatre étudiants par ordre alphabétique de nom_de_famille.
-SELECT * from etudiants LIMIT 4 ORDER BY etudiant_name ASC;
+SELECT * from etudiants ORDER BY etudiant_name ASC LIMIT 4;
 
 -- Récupérez les coordonnées du plus jeune étudiant.
 SELECT etudiant_fname, etudiant_name, MIN(YEAR(age)) from etudiants;
