@@ -1,0 +1,1 @@
+let sentence = "i am not a bad man";
