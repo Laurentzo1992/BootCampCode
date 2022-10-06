@@ -19,6 +19,9 @@ print(Liste)
 #Écrivez un programme qui demande une chaîne à l'utilisateur et affichez une nouvelle chaîne avec toutes les lettres consécutives en double supprimées.
 
 newChaine = input("Veillez saisir une phrase : ")
-chaine = set(newChaine)
+chaine = ""
+for i in newChaine:
+    if i not in chaine:
+        chaine += i
 print(f"Phrase entrée : {newChaine}")
 print(f"votre phrase sans doublons {chaine}")
