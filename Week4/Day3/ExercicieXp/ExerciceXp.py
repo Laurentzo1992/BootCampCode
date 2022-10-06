@@ -71,7 +71,7 @@ more_on_zara = {
 "number_stores": 10000
 }
 brand.update(more_on_zara)
-print(f" La nouvelle valeur du nombre de magasin est : brand['number_stores']")
+print(f" La nouvelle valeur du nombre de magasin est : {brand['number_stores']}")
 #print(brand)
 #print(more_on_zara)
 print("\n")
@@ -95,7 +95,7 @@ print(disney_users_C)
 disney_users_D = {users[i]: i for i in range(len(users)) if "i" in users[i]}
 print(disney_users_D)
 #Les caractères, dont les noms commencent par la lettre « m » ou « p ».
-disney_users_E = {users[i]: i for i in range(len(users)) if users[i][2] == "m" or users[i][0] == "p"}
+disney_users_E = {users[i]: i for i in range(len(users)) if users[i][:1] == "m" or users[i][:1] == "p"}
 print(disney_users_E)
 print("\n")
 

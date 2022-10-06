@@ -8,9 +8,16 @@
 # Assurez-vous que les lettres sont des chaînes.
 # Assurez-vous que les index sont stockés dans une liste et que ces listes sont des valeurs.
 
+sortie = {}
 mot = input("Veillez saisir un mot : ")
-mot = {lettre: [mot.index(lettre) for i in lettre] for lettre in mot}
-print(mot)
+for i in range(len(mot)):
+  if mot[i] in sortie :
+    sortie[mot[i]].append(i)
+  else :
+    sortie[mot[i]] = [i]
+print(sortie)
+
+
 
 
 
