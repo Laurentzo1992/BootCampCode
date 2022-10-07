@@ -1,21 +1,31 @@
-import re
-parttern = re.compile(r"(^[0-9]$)")
-matrix = [["7i3"],["Tsi"],["h%x"],["i #"],["sM "],["$a "],["#t%"],["^r!"]]
-msgSecret = ""
-for i in range(0,3) :
-    for x in matrix :
-        if x[0][i] != " " and parttern.search(x[0][i]) == None:
-            msgSecret += x[0][i]
+Matrix = [
+    ["7","i","3"],
+    ["T","s","i"],
+    ["h","%","x"],
+    ["i"," ", "#"],
+    ["s","M"," "],
+    ["$","a"," "],
+    ["#","t","%"],
+    ["^","r","!"]
+]
 
-secret = ""
-parttern2 = re.compile(r"(^[a-zA-Z]$)")
-esp =0
-for x in msgSecret :
-    if parttern2.search(x) != None :
-        secret += x
-        esp=0
-    elif esp != 1 :
-        secret += " "
-        esp=1
+def read(liste,index,*args):
+    return liste[index]
+code=[]
+top = 0
+while top < (len(Matrix[0])):
+    cpt=0
+    for line in Matrix :
+        char = read(line,top)
+        if char.isalpha() and char != " ":
+            code.append(char)
+            cpt=0
+        elif cpt==0:
+            cpt += 1
+        elif cpt==1:
+            code.append(" ")
+            cpt += 1
 
-print(secret)
+    top +=1
+print("".join(code))
+#Défis terminé avec succès
