@@ -1,7 +1,7 @@
 -- Exercice 1
 
 -- Obtenez une liste de toutes les langues du film.
-select *from language;
+select * from language;
 
 -- Obtenez une liste de tous les films joints avec leurs langues - sélectionnez les détails suivants : titre du film, description et nom de la langue. Essayez votre requête avec différentes jointures :
 
