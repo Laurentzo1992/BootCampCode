@@ -52,8 +52,8 @@ INSERT INTO book(title, author) VALUES ('Alice au pays des merveilles', 'Lewis C
 
   CREATE TABLE student(
     student_id SERIAL,
-    nom VARCHAR(45) NOT NULL,
-    age INTEGER NOT NULL,
+    nom VARCHAR(45) NOT NULL UNIQUE,
+    age INTEGER NOT NULL INTEGER NOT NULL CONSTRAINT age_check CHECK (age <= 15),
     PRIMARY KEY (student_id)
  );
 
