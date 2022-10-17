@@ -41,7 +41,22 @@ def Logout_user(request):
 # Page d'acceuil 
 
 def home(request):
-    context = {}
+    
+    contracts = [
+        {"id":1, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":2, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":3, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":4, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":5, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":6, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":7, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":8, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":9, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+        {"id":10, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
+    ]
+    
+    context = {"contracts":contracts, "entete": contracts[0].keys}
+    
     return render(request, 'authentication/home.html', context)
 
 

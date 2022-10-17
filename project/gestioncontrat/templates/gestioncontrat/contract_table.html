@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      
+      <tr>
+        {% for th in entete %}
+        <th scope="col">{{th}}</th>
+        {% endfor %}
+      </tr>
+      
+    </thead>
+    <tbody>
+      {% for c in contracts %}
+      <tr>
+        <th scope="row">{{c.id}}</th>
+        <td>{{c.numero_contrat}}</td>
+        <td>{{c.date_de_signature}}</td>
+        <td>{{c.date_echeance}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
