@@ -26,5 +26,21 @@
         </form>
         </div>
     </div>
+
+    {% for message in messages %}
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        {% if message.tags == 'error' %}
+        <script>
+            var m = "{{ message }}";
+            swal("Denied !", "Please try again and enter corretly you username and you password.", "error")
+        </script>
+        {% elif message.tags == 'success' %}
+        <script>
+            var m = "{{ message }}";
+            swal("Perfect !", m, "success")
+        </script>
+        {% endif %}
+
+    {% endfor%}
     </body>
 </html>

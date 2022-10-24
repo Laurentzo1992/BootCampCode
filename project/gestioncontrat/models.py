@@ -6,31 +6,37 @@ class Partenaire(models.Model):
     telephone = models.CharField(max_length=100)
     email = models.EmailField()
     
+    def __str__(self):
+        return self.nom
+    
     
 class Structure(models.Model):
     sigle = models.CharField(max_length=100)
     nom = models.CharField(max_length=100)
 
 
+    def __str__(self):
+        return self.sigle
+
 class Financement(models.Model):
     intitule = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.intitule
     
 class Categorie(models.Model):
     intitule = models.CharField(max_length=100)
 
     
-class Travail(models.Model):
+    def __str__(self):
+        return self.intitule
     
-    CDI = 'CDI'
-    CDD = 'CDD'
-
-    NATURE_CHOICES = (
-        ('CDI', 'CDI'),
-        ('CDD', 'CDD'),
-    )
+    
+class Travail(models.Model):
+     
     reference = models.CharField(max_length=10)
     objet = models.TextField()
-    nature = models.CharField(choices=NATURE_CHOICES, verbose_name='nature contrat')
+    nature = models.CharField(max_length=100)
     matricule = models.CharField(max_length=10)
     nom = models.CharField(max_length=60)
     prenom = models.CharField(max_length=80)
@@ -41,11 +47,23 @@ class Travail(models.Model):
     date_fin = models.DateField()
     nombre_renouv = models.IntegerField()
     date_renouvel = models.DateField()
-    date_resiliation = models.DateField()
     lieu = models.CharField(max_length=100)
     date_alerte = models.DateField()
+    file = models.FileField(upload_to='uploads_files/', blank=True)
+    created_at =models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
     
-
+    
+    def __str__(self):
+        return self.reference
+    
+    @property
+    def fileURL(self):
+        try:
+            url = self.file.url
+        except:
+            url = ''
+        return url
 
 
 # Create your models here.

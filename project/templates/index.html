@@ -39,11 +39,10 @@
 		<div class="sidebar-menu">
 			<ul>
 				<li><a href="{% url 'home' %}" class="active"><span class="fa-solid fa-home"></span><span></span>Accueil</a></li>
-				<li><a href="#"><span class="fa-solid fa-gears"></span><span></span>Adminstration</a></li>
-				<li><a href="#"><span class="fa-solid fa-file-signature"></span><span></span>Contrat</a></li>
-				<li><a href="#"><span class="fa-solid fa-people-arrows"></span><span></span>Convention</a></li>
-				<li><a href="#"><span class="fa-solid fa-chart-bar"></span><span></span>Statistiques</a></li>
-				<li><a href="#"><span class="fa-solid fa-clipboard"></span><span></span>Consultation</a></li>
+				<li><a href="{% url 'users' %}"><span class="fa-solid fa-gears"></span><span></span>Adminstration</a></li>
+				<li><a href="{% url 'contrat' %}"><span class="fa-solid fa-file-signature"></span><span></span>Contrat</a></li>
+				<li><a href="{% url 'convention' %}"><span class="fa-solid fa-people-arrows"></span><span></span>Convention</a></li>
+				<li><a href="{% url 'statistique' %}"><span class="fa-solid fa-chart-bar"></span><span></span>Statistiques</a></li>
 			</ul>
 		</div>
 	</div>
@@ -68,7 +67,7 @@
 				</header>
 
 <!---------------Contenu principal------------------------>
-
+					 {% block main %} 
 				<main>
 <!---------------zone Card-------------------------->
 					<div class="cards">
@@ -113,11 +112,24 @@
 
 <!------------** inclusion du tableau des contrats **-------------------------->
 
-					{% include 'gestioncontrat/contract_table.html' %}
 					
 				</main>
+
+				{% endblock main %}
 		</div>
+
+
+
+		{% block content %}{% endblock content %}
+
+
 <!------------******-Scripts****-------------------------->
+
+<!------------******start Message sript zone ****-------------------------->
+
+<!------------****** end Message sript zone ****-------------------------->
+
+
 	 <!-- bootstrap5 js-->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
      <!-- jquery--> 

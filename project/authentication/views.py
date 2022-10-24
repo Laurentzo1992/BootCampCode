@@ -41,23 +41,7 @@ def Logout_user(request):
 # Page d'acceuil 
 
 def home(request):
-    
-    contracts = [
-        {"id":1, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":2, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":3, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":4, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":5, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":6, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":7, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":8, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":9, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-        {"id":10, "numero_contrat": "000A1", "date_de_signature": "21/05/2022", "date_echeance": "20/05/2023"},
-    ]
-    
-    context = {"contracts":contracts, "entete": contracts[0].keys}
-    
-    return render(request, 'authentication/home.html', context)
+    return render(request, 'authentication/home.html')
 
 
 
@@ -108,11 +92,17 @@ def delete(request,user_id):
 # List user  function
 def users(request):
     user_lists = User.objects.all()
-    return render(request, "authentication/list.html", {"users":user_lists})
+    return render(request, "authentication/list.html", {"user_lists":user_lists})
 
 
 def profile(request):
     context = {}
     return render(request, "authentication/profile.html", context)
+
+
+
+def statistique(request):
+    context = {}
+    return render(request, "authentication/statistique.html", context)
 
 # Create your views here.
