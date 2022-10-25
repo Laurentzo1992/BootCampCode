@@ -13,6 +13,14 @@ class TravailForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'placeholder': 'Réference'})
     )
     
+    nature = forms.TypedChoiceField(
+        label='Nature',
+        choices = (("CDD", "CDD"), ("CDI", "CDI")),
+        initial = 'CDD',
+        required = True,
+        widget = forms.Select,
+    )
+    
     objet = forms.CharField(
         label='Objet', min_length=2, max_length=100,
         widget=forms.TextInput(attrs={'placeholder': 'Objet du contrat'})
@@ -20,12 +28,12 @@ class TravailForm(forms.ModelForm):
     
     
     nom = forms.CharField(
-        label='Reference',
+        label='Nom',
         widget=forms.TextInput(attrs={'placeholder': 'Nom du contracté'})
     )
     
     prenom = forms.CharField(
-        label='Reference',
+        label='Prenom',
         widget=forms.TextInput(attrs={'placeholder': 'Prenom du contracté'})
     )
     

@@ -12,7 +12,7 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">Last name</th>
+      <th scope="col">Username</th>
       <th scope="col">Compte actif</th>
       <th scope="col">Dernière connexion</th>
       <th scope="col">Edit</th>
@@ -24,7 +24,7 @@
     {% for user_list in user_lists %}
     <tr>
       <th scope="row">{{user_list.id}}</th>
-      <td>{{user_list.last_name}}</td>
+      <td>{{user_list.username}}</td>
       <td>{{user_list.is_active}}</td>
       <td>{{user_list.last_login}}</td>
       <td>

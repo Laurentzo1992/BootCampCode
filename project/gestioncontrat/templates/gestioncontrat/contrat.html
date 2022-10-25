@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{% load bootstrap_icons %}
 
 
 {% block content %}{% endblock content %}
@@ -6,12 +7,13 @@
 
 <table class="table caption-top">
   <br><br><br>
+
 <a href="{% url 'add' %}" style="float: right; margin-right: 30px;" title="Add contrat">
   <i style="color: yellowgreen; font-size: 25px; " class="fa-sharp fa-solid fa-folder-plus"></i> &nbsp;&nbsp;
 </a>
   <thead>
     <tr>
-      <th scope="col">id</th>
+      <th scope="col">ID</th>
       <th scope="col">Reference</th>
       <th scope="col">Object</th>
       <th scope="col">Nature</th>
@@ -38,7 +40,7 @@
       <td>{{contrat.date_alerte}}</td>
       <td>
         <a href ="{{contrat.file.url}}" title="Lire le fichier">
-        <i style="font-size: 25px;" class="fa-solid fa-file-pdf"></i>
+        <i style="font-size: 25px; color: green" class="fa-solid fa-file-pdf"></i>
         </a>
       </td>
       <td>

@@ -258,7 +258,7 @@ li a span:last-child {
         z-index: 100;
         width: 45%;
     }
-    .#menu:checked~.sidebar li a {
+    #menu:checked~.sidebar li a {
         padding-left: 1rem;
     }
     #menu:checked~.sidebar .sidebar-brand,
