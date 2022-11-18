@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>personne</title>
+</head>
+<body>
+
+<table>
+    <p>{{ message }}</p>
+    <form method="post">
+        {{ form.as_table }}
+        {% csrf_token %}
+        <button type="submit" >Ajouter</button>
+    </form>
+</table>
+</body>
+</html>

@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import request
 from telephone.models import Personne
+from .forms import PersonneForm
+from django.contrib import messages
 
 #Fonction to display all personnes
 def personne(request):
@@ -17,3 +19,17 @@ def personne_nom(request, nom):
 	personne = Personne.objects.get(nom=nom)
 	return render(request, "telephone/personne_nom.html", {"personne":personne})
 # Create your views here.
+
+def add(request):
+    if request.method=="POST":
+        form = PersonneForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Telephone added successfully !")
+            return redirect('personne')
+        else:
+            return render(request, 'telephone/add.html', {"form":form})
+    else:
+        form = PersonneForm()
+        return render(request, 'telephone/add.html', {"form":form})
+    
