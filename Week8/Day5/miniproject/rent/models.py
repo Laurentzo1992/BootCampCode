@@ -50,6 +50,21 @@ class Tarif(models.Model):
     taux = models.FloatField()
     type_v =  models.ForeignKey(Type, null=True, blank=True, on_delete=models.CASCADE)
     taille_v = models.ForeignKey(Taille, null=True, blank=True, on_delete=models.CASCADE)
+    
+    
+class Address(models.Model):
+    adresse = models.CharField(max_length=200)
+    adresse2 = models.CharField(max_length=200)
+    ville = models.CharField(max_length=200)
+    pays = models.CharField(max_length=200)
+    code_postal = models.CharField(max_length=200)
+
+
+
+class RentalStation(models.Model):
+    nom = models.CharField(max_length=200)
+    capacité = models.IntegerField()
+    address= models.ForeignKey(Address, null=True, blank=True, on_delete=models.CASCADE)
 
 
 # Create your models here.
