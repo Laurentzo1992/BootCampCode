@@ -6,16 +6,8 @@ from .forms import TodoForm
 
 def display_todos(request):
     todos = Todo.objects.order_by('title')
-    context = {"todos":todos}
-    return render(request, 'todo/home.html', context)
-
-
-
-def cat(request):
     cats = Category.objects.order_by('name')
-    context = {"cats":cats}
-    return render(request, 'todo/home.html', context)
-
+    return render(request, 'todo/home.html', {"todos":todos, "cats":cats})
 
 
 def add(request):
