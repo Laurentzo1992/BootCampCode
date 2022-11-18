@@ -1,14 +1,22 @@
 from django.db import models
 
 
+class Address(models.Model):
+    adresse = models.CharField(max_length=200)
+    adresse2 = models.CharField(max_length=200)
+    ville = models.CharField(max_length=200)
+    pays = models.CharField(max_length=200)
+    code_postal = models.CharField(max_length=200)
+
+
 class Client(models.Model):
     prenom = models.CharField(max_length=200)
     nom = models.CharField(max_length=200)
     email = models.EmailField()
-    telephone = models.CharField(max_length=200)
-    adresse = models.CharField(max_length=200)
-    ville = models.CharField(max_length=200)
-    pays = models.CharField(max_length=200)
+    telephone = models.EmailField()
+    address= models.ForeignKey(Address, null=True, blank=True, on_delete=models.CASCADE)
+
+    
     
     def __str__(self):
         return self.nom
@@ -51,15 +59,6 @@ class Tarif(models.Model):
     type_v =  models.ForeignKey(Type, null=True, blank=True, on_delete=models.CASCADE)
     taille_v = models.ForeignKey(Taille, null=True, blank=True, on_delete=models.CASCADE)
     
-    
-class Address(models.Model):
-    adresse = models.CharField(max_length=200)
-    adresse2 = models.CharField(max_length=200)
-    ville = models.CharField(max_length=200)
-    pays = models.CharField(max_length=200)
-    code_postal = models.CharField(max_length=200)
-
-
 
 class RentalStation(models.Model):
     nom = models.CharField(max_length=200)
