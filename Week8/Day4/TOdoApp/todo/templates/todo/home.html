@@ -39,6 +39,7 @@
               <th scope="col">date_création</th>
               <th scope="col">catégorie </th>
               <th scope="col">Finis </th>
+              <th scope="col">Valider </th>
             </tr>
           </thead>
           <tbody>
@@ -49,6 +50,11 @@
               <td>{{todo.date_creation}}</td>
               <td>{{todo.category}}</td>
               <td>{{todo.has_been_done}}</td>
+              <td>
+                <a href="#" type="button" class="btn btn-warning" title="Valider">
+                  <i class="bi bi-check-circle-fill"></i>
+              </a>
+              </td>
             </tr>
             {% endfor %}
             

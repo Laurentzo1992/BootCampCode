@@ -19,7 +19,7 @@
           {% else%}
           <small class="btn btn-danger mt-4 ms-5">Ocuppé</small>
           {% for reser in resers %}
-          <h5 class=" mt-2 text-muted">Libère le : {{reser.sortit}}</h5>
+          <h6 class=" mt-2 text-muted">Libère le : {{reser.sortit}} par {{reser.user}}</h6>
           {% endfor %}
           {% endif %}
         </div>

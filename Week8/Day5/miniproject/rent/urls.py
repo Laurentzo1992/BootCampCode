@@ -15,6 +15,12 @@ urlpatterns = [
     path('rent/vehicle', views.vehicle, name='vehicle'),
     path('rent/vehicle/<int:id>', views.vehicle_detail, name='vehicle_detail'),
     
+    path('rent/station/add', views.add_station, name='add_station'),
+    path('rent/station', views.station, name='station'),
+    path('rent/station/<int:id>', views.station_detail, name='station_detail'),
+    path('rent/station/distribution', views.distribution, name='distribution'),
+    path('rent/station/distribute', views.distribute, name='distribute'),
+    
 ]
   
  
