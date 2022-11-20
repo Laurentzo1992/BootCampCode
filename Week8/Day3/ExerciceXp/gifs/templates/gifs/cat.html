@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %} 
+
+<a href="{% url 'add_cat' %}">Ajouter categorie<a>
+
+<table class="table w-50 mt-5">
+   <thead>
+     <tr>
+       <th scope="col">Id</th>
+       <th scope="col">Nom</th>
+       <th scope="col">gifs</th>
+     </tr>
+   </thead>
+   <tbody>
+       {% for cat in cats %}
+     <tr>
+       <th scope="row">{{cat.id}}</th>
+       <td>{{cat.nom}}</td>
+       <td>{{cat.gifs}}</td>
+     </tr>
+     {% endfor %}
+     
+   </tbody>
+ </table>
+{% endblock content %}
+

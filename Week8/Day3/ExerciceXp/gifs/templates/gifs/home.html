@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+
+
+
+ {% block content %} 
+ 
+<a href="{% url 'add_gif' %}">Ajouter gifs<a>
+
+ <table class="table w-50 mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Titre</th>
+        <th scope="col">gifs</th>
+        <th scope="col">Auteur</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for gif in gifs%}
+      <tr>
+        <th scope="row">{{gif.id}}</th>
+        <td>{{gif.titre}}</td>
+        <td><img src="{{gif.url}}" style="width:15%; height: 15%"></td>
+        <td>{{gif.nom_uploader}}</td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+ {% endblock content %}
+
