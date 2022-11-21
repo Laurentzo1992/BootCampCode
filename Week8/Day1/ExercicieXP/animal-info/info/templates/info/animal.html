@@ -1,22 +1,61 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>animal</title>
+        <title>family</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <a href="{% url 'family' %}"> Liste des animaux
+        <a href="{% url 'family' %}"> Liste des familles
         </a>
-        <h1>Liste d'animaux</h1>
-        <ul>
-            {% for data in datas.value %}
-                <li>{{ data }}</li>
+     
+       <h1>Liste des animaux</h1>
+       {% for v in datas.values %}
+        <table>
+           <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>weight</td>
+                <td>height</td>
+                <td>speed</td>
+                <td>family</td>
+                <td>image</td>
+            </tr>
+
+            {% for val in v %}
+
+            <tr>
+                <td>{{val.id}}</td>
+                <td>{{val.name}}</td>
+                <td>{{val.weight}}</td>
+                <td>{{val.height}}</td>
+                <td>{{val.speed}}</td>
+                <td>{{val.family}}</td>
+                <td>{{val.image}}</td>
+            </tr>
+
+
             {% endfor %}
-            </ul>
+
+        </table>
+        {% endfor %}
+
+
+
+       <!--  <h1>Liste des famille d'animaux</h1>
+       {% for key, values in datas.items %}
+       <ul>
+                <li>{{key}}</li>
+                {% for v in values %}
+                <li>{{v}}</li>
+                {% endfor %}
+              
+                {% endfor %}
+        </ul> -->
+
+            
     </body>
 </html>

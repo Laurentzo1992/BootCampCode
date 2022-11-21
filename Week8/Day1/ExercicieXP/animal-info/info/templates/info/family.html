@@ -13,6 +13,29 @@
         </a>
      
        <h1>Liste des famille d'animaux</h1>
+       {% for v in datas.values %}
+        <table>
+           <tr>
+                <td>id</td>
+                <td>name</td>
+            </tr>
+
+            {% for val in v %}
+
+            <tr>
+                <td>{{val.id}}</td>
+                <td>{{val.name}}</td>
+            </tr>
+
+
+            {% endfor %}
+
+        </table>
+        {% endfor %}
+
+
+
+       <!--  <h1>Liste des famille d'animaux</h1>
        {% for key, values in datas.items %}
        <ul>
                 <li>{{key}}</li>
@@ -21,7 +44,8 @@
                 {% endfor %}
               
                 {% endfor %}
-        </ul>
+        </ul> -->
+
             
     </body>
 </html>
