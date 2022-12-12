@@ -26,19 +26,43 @@ class MenuItem:
         self.id = id
         self.nom = nom
         self.prix = prix
+
+    def database_querry(self,query):
+        connection = psycopg2.connect(host=HOSTNAME, user=USERNAME, password=PASSWORD, dbname=DATABASE )
+        cursor = connection.cursor()
+        cursor.execute(query)
+        results = cursor.fetchall()
+        connection.close()
+        return results
+
+    # 2    
+    def save(self):
+        query = f"INSERT INTO Menu (name, Prix) VALUES ('{self.nom}', {self.prix})"
+        return self.database_querry(query)
+
+
+    def delete_from_db(self):
+        query=f"DELETE FROM Menu where name ='{self.nom}'"
+        return self.database_querry(query)
         
-    def save():
-        pass
+    def update_db(self,ancien):
+        query=f"UPDATE Menu SET name = '{self.nom}' WHERE name = '{ancien}'"
+        self.database_querry(query)
+        query =f"UPDATE Menu SET Prix = {self.prix} WHERE name = '{self.nom}'" 
+        self.database_querry(query)
 
-    def delete():
-        pass
+    # 3
+    def all_(self):
+        query=f'SELECT name,Prix FROM Menu'
+        results = self.database_querry(query)
+        print(list(results))
+        return results
 
-    def update():
-        pass
-
-    def all():
-        pass
-    
-    def get_by_namequi(id):
-        pass
-    
+    # 4 
+    def get_by_name(self,name):
+        query=f'select name from Menu where name ="{name}" '
+        results= self.database_querry(query)
+        if len(results) < 1:
+            print('Aucune correspondance')
+        else:    
+            print(list(results))
